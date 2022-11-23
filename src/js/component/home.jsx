@@ -5,7 +5,8 @@ const ToDoList = () => {
 	const [task, setTask] = useState(
 		["Be grateful for what you have !!",
 		"Drink a glass of water",
-		"Do Yoga (30min)","Meditation",
+		"Do Yoga (30min)",
+		"Meditation",
 		"Write my morning pages",
 		"Take a shower", 
 		"Breakfast"])
@@ -18,7 +19,9 @@ const ToDoList = () => {
 			<h1 className="title text-center">&#10024; <b>To start a good day</b> &#9989;</h1>
 			<form onSubmit={(event)=>
 			{event.preventDefault(); 
-			setTask([...task, event.target[0].value])}}>
+			setTask([...task, event.target[0].value])
+			// the next line only clear input
+			event.target[0].value = "";}}>
 			<input placeholder="Add another task?"/>
 			</form>
 			{task.map((value, index,arr) =>{
